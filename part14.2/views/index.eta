@@ -1,0 +1,10 @@
+<h1>Personal stuff</h1>
+<form method='POST' action='/'>
+    <input type='text' name='item' />
+    <input type='submit' value='Add!' />
+</form>
+<ul>
+    <% it.items.forEach((item) => { %>
+        <li><%= item %></li>
+    <% }); %>
+</ul>

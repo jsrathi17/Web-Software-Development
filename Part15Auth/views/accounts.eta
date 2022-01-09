@@ -1,0 +1,17 @@
+<h1>Accounts</h1>
+<h2>Current accounts</h2>
+<% if (it.accounts && it.accounts.length > 0) { %>
+  <ul>
+    <% it.accounts.forEach((account) => { %>
+      <li>
+        <a href="/accounts/<%= account.id %>">Account <%= account.id %>: <%= account.name %> (<%= account.balance %>)</a>
+      </li>
+    <% }); %>
+  </ul>
+<% } %>
+<h2>Create account</h2>
+<form method="POST" action="/accounts">
+  Name:<br/>
+  <input type="text" name="name" /><br/>
+  <input type="submit" value="Create a new account!" />
+</form>

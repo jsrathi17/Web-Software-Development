@@ -1,0 +1,11 @@
+<h1>Register!</h1>
+<form method="POST" action="/auth/register">
+  Email:<br/>
+  <input type="email" name="email" /><br/>
+  Password:<br/>
+  <input type="password" name="password" /><br/>
+  Same password again:<br/>
+  <input type="password" name="verification" /><br/>
+  <input type="submit" value="Submit!" />
+</form>
+<p>Already registered? <a href="/auth/login">Login here!</a></p>

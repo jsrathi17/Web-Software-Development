@@ -1,0 +1,21 @@
+<h1>Songs and ratings!</h1>
+<% if (it.errors && it.errors.length > 0) { %>
+  <ul>
+    <% it.errors.forEach((error) => { %>
+      <li><%= error %></li>
+    <% }); %>
+  </ul>
+<% } %>
+<form method="POST">
+    <input type="text" name="name" value="<%= it.name %>" />
+    <input type="number" name="rating" min="1" max="10" value="<%= it.rating %>" />
+    <input type="submit" value="Submit rating!" />
+</form>
+<% if (it.songs && it.songs.length > 0) { %>
+<h2>Current songs</h2>
+<ul>
+    <% it.songs.forEach((song) => { %>
+        <li><%= song.name %> (<%= song.rating %>)</li>
+    <% }); %>
+</ul>
+<% } %>

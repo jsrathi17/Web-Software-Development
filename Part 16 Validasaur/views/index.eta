@@ -1,0 +1,15 @@
+<h1>Name and year of birth!</h1>
+<form method="POST">
+    <input type="text" name="name" value="<%= it.name %>" />
+    <input type="number" name="yearOfBirth" min="1900" max="2000" value="<%= it.yearOfBirth %>" />
+    <input type="submit" value="Submit!" />
+</form>
+<% if (it.errors) { %>
+<ul>
+    <% Object.keys(it.errors).forEach((attribute) => { %>
+        <% Object.values(it.errors[attribute]).forEach((err) => { %>
+            <li><%= err %></li>
+        <% }); %>
+    <% }); %>
+</ul>
+<% } %>

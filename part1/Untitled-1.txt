@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: Cloud API
+  description: For cloud Assignment 5
+  contact:
+    name: Jayshree Rathi
+    url: http://devapi.com
+  version: 1.0.0
+servers:
+  - url: http://devapi.com
+paths:
+  /student:
+    description: Student Resoucrce
+    get:
+      description: Operation to fetch student
+      parameters: 
+        - in: query
+          name: studentname
+          required: true
+          schema:
+            type: string
+            example: Jayshree
+      responses:
+        200:
+          description: Sucess Response
+          content:
+            applicaiton/json:
+              schema:
+  
+  
+components:
+  schemas:
+    Photo:
+      type: object
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          maxLength: 20
+        description:
+          type: string
+          maxLength: 100
+        access:
+          type: string
+          enum: [public,private]
+        location:
+          type: string
+        file:
+          type: string
+        created_date:
+          type: string
+          format: date-time
+        modified_date:
+          type: string
+          format: date-time
+      required:
+        - name
+        - access
+        - location
+        - file
+        - created_date
+        - modified_date
+    
+    Photos:
+      type: array
+      items:
+        $ref: '#/components/schemas/Photo'
+    
+    Success:
+      type: object
+      properties:
+        message:
+          type: string
+        id:
+          type: string
+      
+    Error:
+      type: object
+      properties:
+        message:
+          type: string

@@ -1,0 +1,12 @@
+<h1><%= it.name %> (<%= it.balance %>)</h1>
+<form method="POST" action="/accounts/<%= it.id %>/deposit">
+  Amount of money to deposit:<br/>
+  <input type="number" name="amount" /><br/>
+  <input type="submit" value="Deposit money!" />
+</form>
+<form method="POST" action="/accounts/<%= it.id %>/withdraw">
+  Amount of money to withdraw:<br/>
+  <input type="number" name="amount" /><br/>
+  <input type="submit" value="Withdraw money!" />
+</form>
+<a href="/accounts">Back to accounts</a>
